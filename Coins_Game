@@ -1,0 +1,17 @@
+#To Check Who Is The Winner Of The Coin Game
+t = int(input("Enter The Number Of Test Cases:"))
+if t>=1 and t<=1000:
+    for i in range(0,t):
+        a = eval(input("Enter The A,B,C,D:"))
+        if a[0] >= a[1]:
+            a[1] = a[1]+a[2]
+        else:
+            a[0] = a[0]+a[2]
+        if a[0] >= a[1]:
+            a[1] = a[1]+a[3]
+        else:
+            a[0] = a[0]+a[3]
+        if a[0] >= a[1]:
+            print("N-Suresh Is A Winner")
+        else:
+            print("S-Sundar Is A Winner")
