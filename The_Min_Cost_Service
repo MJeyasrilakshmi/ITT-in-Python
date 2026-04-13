@@ -1,0 +1,29 @@
+#Given two delivery costs, X and Y, determine which service is cheaper to minimize the shop owner's expenses.
+import sys
+
+def solve():
+   
+    try:
+        line1 = sys.stdin.readline()
+        if not line1:
+            return
+        t = int(line1.strip())
+        
+        for _ in range(t):
+           
+            line = sys.stdin.readline()
+            if not line:
+                break
+            x, y = map(int, line.split())
+          
+            if x < y:
+                print("FIRST")
+            elif y < x:
+                print("SECOND")
+            else:
+                print("ANY")
+    except ValueError:
+        pass
+
+if __name__ == "__main__":
+    solve()
