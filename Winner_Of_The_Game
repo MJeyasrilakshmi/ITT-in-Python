@@ -1,0 +1,21 @@
+#To Find Who Is The Winner Of The Game
+
+p = int(input("Enter The Price Amount:"))
+s = input("Enter The Result:")
+w = s.count('C')
+l = s.count('N')
+d = s.count('D')
+r1 = w*2+d*1
+r2 = l*2+d*1
+if(r1>r2):
+    t = 60*p
+    print("Chandru Won")
+    print(t)
+elif(r1==r2):
+    t = 55*p
+    print("Chandru Won")
+    print(t)
+else:
+    t = 60*p
+    print("Nimal Won")
+    print(t)
