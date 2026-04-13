@@ -1,0 +1,16 @@
+#To Check Whether The Given Number Of Tyres is Sufficient For Manufacturing The Bike After The Car Manufacturing.
+
+t = int(input("Enter The Number Of Test Cases:"))
+if t>=1 and t<=100:
+    for i in range(0,t):
+        n = int(input("Enter The Number Of Tyres:"))
+        if n >=2 and n<=2000 and n%2==0:
+            if n%4==0:
+                print("NO CANNOT MANUFACTURE BIKE")
+            else :
+                print("YES , BIKE CAN MANUFACTURE")
+        else:
+            print("No Cannot Manufacture Bike")
+else :
+    print("Give The Valid Input")
+    
