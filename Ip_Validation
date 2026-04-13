@@ -1,0 +1,23 @@
+#To Check The Given IP Is Valid Or Not
+def validate_ip(ip_str):
+    try:
+        octets = ip_str.split('.')
+        if len(octets) != 4:
+            raise ValueError("An IP address must have exactly 4 octets.")
+
+        for part in octets:
+            if not part.strip() or not part.isdigit():
+                raise ValueError(f"Invalid characters or empty value found: '{part}'")
+
+            num = int(part)
+            if not (0 <= num <= 255):
+                raise ValueError(f"Octet {num} is out of range (0-255).")
+
+        return True, "Valid IPv4 address."
+
+    except ValueError as e:
+        return False, str(e)
+test_ips = ["192.168.1.1", "192..1.1", "256.0.0.1", "01.102.003.04"]
+for ip in test_ips:
+    is_valid, message = validate_ip(ip)
+    print(f"{ip}: {'VALID' if is_valid else 'INVALID'} ({message})")
